@@ -1,0 +1,213 @@
+{
+  "kind": "build_request",
+  "title": "Simplified full-site rebuild with admin dashboard",
+  "projectName": "Signature Home Decor LLP",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-18",
+      "text": "Update the Motoko backend actor to store: 15 products across 7 categories (Living Room, Bedroom, Kitchen, Outdoor, Office, Dining Room, Garden) with fields id, name, description, category, price (USD $100–$600), and imageUrl using Unsplash URLs; order storage with placeOrder mutation; contact form submission storage; and 4 sample blog posts with title, excerpt, body, author, date, and category. Expose query functions for all entities.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "getProducts returns all 15 products",
+        "getProductsByCategory filters correctly",
+        "placeOrder stores an order and returns its ID",
+        "submitContact stores a contact message",
+        "getOrders, getContacts, getBlogPosts queries return correct data",
+        "4 blog posts are pre-populated"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Build a fully navigable React frontend with React Router covering all routes: / (Home), /shop, /product/:id, /cart, /wishlist, /checkout, /about, /contact, /admin, /blog, /blog/:id. Apply the luxury ivory/beige/matte black/champagne gold theme with Playfair Display serif headings throughout all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All routes render without errors",
+        "Header navigation links to all main pages",
+        "Luxury theme (ivory/beige/matte black/champagne gold) is consistent across all pages",
+        "Playfair Display or similar serif font used for headings"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Build the Home page with: a cinematic full-width hero section with headline and CTA, a Featured Categories section (7 categories), a Best Sellers section (top 4 products), and a Testimonials section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section displays with headline and CTA button",
+        "Featured Categories shows all 7 categories",
+        "Best Sellers displays 4 product cards",
+        "Testimonials section renders at least 3 testimonials"
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "Build the Shop page at /shop with category filter tabs, price range filter, sort options (Newest, Best Selling, Price High–Low, Price Low–High), and a search bar that filters products in real time. Fetch products from the backend via React Query.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Category filter tabs update the displayed product list",
+        "Price range filter narrows results correctly",
+        "Sort options reorder products correctly",
+        "Search bar filters visible products in real time"
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "text": "Build the Product Detail page at /product/:id with product image, name, description, price (USD), category tag, Add to Cart button, Add to Wishlist button, a Shipping & Return info accordion, and a Related Products section showing up to 4 items from the same category.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product data loads from backend by ID",
+        "Add to Cart adds the item to cart state",
+        "Add to Wishlist adds the item to wishlist state",
+        "Shipping & Return accordion expands/collapses",
+        "Related Products shows up to 4 items from the same category"
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "text": "Implement persistent Cart (React Context) and Wishlist state. Cart page at /cart shows items with quantity controls and subtotal. Wishlist page at /wishlist lists saved products with a Move to Cart option.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Cart persists across page navigations",
+        "Quantity controls update subtotal in real time",
+        "Wishlist items can be moved to cart",
+        "Empty cart and empty wishlist states are shown when applicable"
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "text": "Build the Checkout page at /checkout with guest form (name, email, shipping address), coupon code input applying a discount, order summary panel, and a Place Order button that calls placeOrder on the Motoko backend and shows a confirmation message.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Guest form fields are validated before submission",
+        "Valid coupon codes apply a discount to the order total",
+        "Place Order calls the backend placeOrder mutation",
+        "Confirmation message is displayed after successful order"
+      ]
+    },
+    {
+      "id": "REQ-25",
+      "text": "Build the About Us page at /about with a brand story for Signature Home Decor LLP, a Vision & Mission section, and luxury editorial layout.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Brand story narrative is displayed",
+        "Vision & Mission section is present",
+        "Layout uses luxury editorial styling consistent with the site theme"
+      ]
+    },
+    {
+      "id": "REQ-26",
+      "text": "Build the Contact page at /contact with a form (name, email, subject, message) that submits to the Motoko backend via submitContact, and a floating WhatsApp button opening wa.me with a pre-filled message visible on all pages.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact form submits to the backend and shows a success message",
+        "WhatsApp floating button is visible on every page",
+        "WhatsApp link opens with a pre-filled message"
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "text": "Build the Admin Dashboard at /admin (no authentication required) with four tabs: Products (add/edit/delete), Orders (view all with status), Contact Submissions (view all), and Blog Posts (add/edit/delete). All data fetched from and written to the Motoko backend.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products tab lists all products with Edit and Delete actions",
+        "New product form saves to backend",
+        "Orders tab lists all orders",
+        "Contact Submissions tab shows all messages",
+        "Blog Posts tab allows adding, editing, and deleting posts"
+      ]
+    },
+    {
+      "id": "REQ-28",
+      "text": "Build the Blog listing page at /blog showing post cards in a grid, and individual post pages at /blog/:id displaying full post content. Data fetched from the Motoko backend.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-14",
+          "msg-16"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Blog listing shows all 4 pre-populated posts as cards",
+        "Clicking a card navigates to /blog/:id",
+        "Individual post page displays title, author, date, body content"
+      ]
+    }
+  ],
+  "constraints": [
+    "Keep total pre-populated products to 15 to avoid exceeding build budget",
+    "Keep blog posts to exactly 4 pre-populated entries",
+    "Do not add authentication to the admin dashboard",
+    "Do not edit files in frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "200-product catalog",
+    "Multi-currency display",
+    "Real-time WebSocket features",
+    "Third-party payment integration",
+    "Admin authentication / login screen"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

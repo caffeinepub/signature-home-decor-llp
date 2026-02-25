@@ -1,0 +1,234 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T00:15:05.702Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 11,
+    "implemented": 10,
+    "items": [
+      {
+        "id": "REQ-18",
+        "summary": "Update the Motoko backend actor to store: 15 products across 7 categories (Living Room, Bedroom, Kitchen, Outdoor, Office, Dining Room, Garden) with fields id, name, description, category, price (USD $100–$600), and imageUrl using Unsplash URLs; order storage with placeOrder mutation; contact form submission storage; and 4 sample blog posts with title, excerpt, body, author, date, and category. Expose query functions for all entities.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-19",
+        "summary": "Build a fully navigable React frontend with React Router covering all routes: / (Home), /shop, /product/:id, /cart, /wishlist, /checkout, /about, /contact, /admin, /blog, /blog/:id. Apply the luxury ivory/beige/matte black/champagne gold theme with Playfair Display serif headings throughout all pages.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx",
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx",
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Build the Home page with: a cinematic full-width hero section with headline and CTA, a Featured Categories section (7 categories), a Best Sellers section (top 4 products), and a Testimonials section.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/components/Hero.tsx",
+          "frontend/src/components/FeaturedCategories.tsx",
+          "frontend/src/components/BestSellers.tsx",
+          "frontend/src/components/Testimonials.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/components/Hero.tsx",
+          "frontend/src/components/FeaturedCategories.tsx",
+          "frontend/src/components/BestSellers.tsx",
+          "frontend/src/components/Testimonials.tsx"
+        ]
+      },
+      {
+        "id": "REQ-21",
+        "summary": "Build the Shop page at /shop with category filter tabs, price range filter, sort options (Newest, Best Selling, Price High–Low, Price Low–High), and a search bar that filters products in real time. Fetch products from the backend via React Query.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Shop.tsx",
+          "frontend/src/components/CategoryFilter.tsx",
+          "frontend/src/components/PriceRangeFilter.tsx",
+          "frontend/src/components/SortOptions.tsx",
+          "frontend/src/components/SearchBar.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Shop.tsx",
+          "frontend/src/components/CategoryFilter.tsx"
+        ]
+      },
+      {
+        "id": "REQ-22",
+        "summary": "Build the Product Detail page at /product/:id with product image, name, description, price (USD), category tag, Add to Cart button, Add to Wishlist button, a Shipping & Return info accordion, and a Related Products section showing up to 4 items from the same category.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ProductDetail.tsx",
+          "frontend/src/components/AddToCartButton.tsx",
+          "frontend/src/components/AddToWishlistButton.tsx",
+          "frontend/src/components/ShippingReturnAccordion.tsx",
+          "frontend/src/components/ProductCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ProductDetail.tsx",
+          "frontend/src/components/ShippingReturnAccordion.tsx",
+          "frontend/src/components/ProductCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-23",
+        "summary": "Implement persistent Cart (React Context) and Wishlist state. Cart page at /cart shows items with quantity controls and subtotal. Wishlist page at /wishlist lists saved products with a Move to Cart option.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/contexts/CartContext.tsx",
+          "frontend/src/contexts/WishlistContext.tsx",
+          "frontend/src/hooks/useCart.ts",
+          "frontend/src/hooks/useWishlist.ts",
+          "frontend/src/pages/Cart.tsx",
+          "frontend/src/pages/Wishlist.tsx",
+          "frontend/src/components/EmptyCart.tsx",
+          "frontend/src/components/EmptyWishlist.tsx",
+          "frontend/src/main.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/contexts/CartContext.tsx",
+          "frontend/src/contexts/WishlistContext.tsx",
+          "frontend/src/pages/Cart.tsx",
+          "frontend/src/pages/Wishlist.tsx"
+        ]
+      },
+      {
+        "id": "REQ-24",
+        "summary": "Build the Checkout page at /checkout with guest form (name, email, shipping address), coupon code input applying a discount, order summary panel, and a Place Order button that calls placeOrder on the Motoko backend and shows a confirmation message.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Checkout.tsx",
+          "frontend/src/hooks/useMutations.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Checkout.tsx",
+          "frontend/src/hooks/useMutations.ts"
+        ]
+      },
+      {
+        "id": "REQ-25",
+        "summary": "Build the About Us page at /about with a brand story for Signature Home Decor LLP, a Vision & Mission section, and luxury editorial layout.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/About.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/About.tsx"
+        ]
+      },
+      {
+        "id": "REQ-26",
+        "summary": "Build the Contact page at /contact with a form (name, email, subject, message) that submits to the Motoko backend via submitContact, and a floating WhatsApp button opening wa.me with a pre-filled message visible on all pages.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/components/WhatsAppButton.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/components/WhatsAppButton.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-27",
+        "summary": "Build the Admin Dashboard at /admin (no authentication required) with four tabs: Products (add/edit/delete), Orders (view all with status), Contact Submissions (view all), and Blog Posts (add/edit/delete). All data fetched from and written to the Motoko backend.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Admin.tsx",
+          "frontend/src/components/admin/ProductsTab.tsx",
+          "frontend/src/components/admin/OrdersTab.tsx",
+          "frontend/src/components/admin/ContactSubmissionsTab.tsx",
+          "frontend/src/components/admin/BlogPostsTab.tsx",
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/hooks/useMutations.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Admin.tsx",
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/hooks/useMutations.ts"
+        ]
+      },
+      {
+        "id": "REQ-28",
+        "summary": "Build the Blog listing page at /blog showing post cards in a grid, and individual post pages at /blog/:id displaying full post content. Data fetched from the Motoko backend.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Blog.tsx",
+          "frontend/src/pages/BlogPost.tsx",
+          "frontend/src/components/BlogPostCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Blog.tsx",
+          "frontend/src/pages/BlogPost.tsx",
+          "frontend/src/components/BlogPostCard.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/BestSellers.tsx",
+    "frontend/src/components/BlogPostCard.tsx",
+    "frontend/src/components/CategoryFilter.tsx",
+    "frontend/src/components/FeaturedCategories.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/InstagramGallery.tsx",
+    "frontend/src/components/ProductCard.tsx",
+    "frontend/src/components/ProductCatalog.tsx",
+    "frontend/src/components/ShippingReturnAccordion.tsx",
+    "frontend/src/components/Testimonials.tsx",
+    "frontend/src/components/WhatsAppButton.tsx",
+    "frontend/src/contexts/CartContext.tsx",
+    "frontend/src/contexts/WishlistContext.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useMutations.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/pages/About.tsx",
+    "frontend/src/pages/Admin.tsx",
+    "frontend/src/pages/Blog.tsx",
+    "frontend/src/pages/BlogPost.tsx",
+    "frontend/src/pages/Cart.tsx",
+    "frontend/src/pages/Checkout.tsx",
+    "frontend/src/pages/Contact.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/ProductDetail.tsx",
+    "frontend/src/pages/Shop.tsx",
+    "frontend/src/pages/Wishlist.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

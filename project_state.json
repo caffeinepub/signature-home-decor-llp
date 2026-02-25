@@ -1,0 +1,340 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "A luxury e-commerce website called 'Signature Home Decor LLP' targeting USA & international customers. Premium editorial design inspired by Restoration Hardware/Pottery Barn with ivory, beige, matte black, and champagne gold palette. Full site with 6 pages, shop filters, product detail, cart, wishlist, coupon system, admin dashboard, blog, and AI-style product recommendations.",
+  "architectural_notes": [
+    "Website name: Signature Home Decor LLP",
+    "Design inspired by Restoration Hardware, Pottery Barn, West Elm — luxury editorial aesthetic",
+    "Color palette: Ivory, Warm White, Beige, Matte Black, Champagne Gold accents",
+    "Typography: large bold serif headings + clean sans-serif body text",
+    "No third-party payment gateway, Google Maps, or external AI chatbot integrations",
+    "Product price range: $100–$600 USD, all prices displayed in USD format",
+    "Categories expanded to 7: Living Room, Bedroom, Kitchen, Outdoor, Office, Dining Room, Garden"
+  ],
+  "known_issues": [
+    "Repeated build failures likely due to budget/iteration limits — simplified builds (15-20 products instead of 200) recommended"
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-visually-distinct-google-inspired-theme-clean-white-backgrounds-bold-primary-color-accents-red-blue-yellow-green-crisp-sans-serif-typography-similar-to-product-sans-roboto-generous-whitespace-card-based-layouts-and-a-consistent-color-palette-applied-throughout-all-pages-and-components",
+      "title": "Create a visually distinct Google-inspired theme: clean white backgrounds, bold primary color accents (red, blue, yellow, green), crisp sans-serif typography (similar to Product Sans / Roboto), generous whitespace, card-based layouts, and a consistent color palette applied throughout all pages and components.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-home-page-for-signature-home-decor-llp-that-includes-a-top-navigation-bar-with-the-brand-name-signature-home-decor-llp-and-a-logo-a-hero-section-with-a-welcoming-headline-and-call-to-action-a-featured-categories-section-e-g-living-room-bedroom-kitchen-outdoor-and-a-footer-with-the-brand-name-and-tagline",
+      "title": "Build a Home Page for 'Signature Home Decor LLP' that includes: a top navigation bar with the brand name 'Signature Home Decor LLP' and a logo, a hero section with a welcoming headline and call-to-action, a featured categories section (e.g., Living Room, Bedroom, Kitchen, Outdoor), and a footer with the brand name and tagline.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-home-decor-items-catalog-section-on-the-home-page-that-displays-a-grid-of-product-cards-each-card-should-show-a-product-image-placeholder-product-name-short-description-category-tag-and-a-price-include-a-simple-category-filter-bar-to-let-users-filter-items-by-room-type",
+      "title": "Build a Home Decor Items catalog section on the home page that displays a grid of product cards. Each card should show a product image placeholder, product name, short description, category tag, and a price. Include a simple category filter bar to let users filter items by room/type.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-connect-the-frontend-catalog-section-to-the-backend-via-react-query-to-fetch-and-display-live-product-data-from-the-motoko-actor-use-the-getproducts-and-getproductsbycategory-queries-for-real-time-filtering",
+      "title": "Connect the frontend catalog section to the backend via React Query to fetch and display live product data from the Motoko actor. Use the getProducts and getProductsByCategory queries for real-time filtering.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-overall-visual-theme-to-a-luxury-editorial-aesthetic-inspired-by-restoration-hardware-and-pottery-barn-replace-the-current-google-inspired-color-palette-with-ivory-warm-white-beige-matte-black-and-champagne-gold-accents-switch-typography-to-large-bold-serif-headings-e-g-playfair-display-or-similar-paired-with-a-clean-sans-serif-body-font-apply-generous-whitespace-soft-animations-smooth-scrolling-and-a-mobile-first-fully-responsive-layout-throughout-all-pages-and-components",
+      "title": "Redesign the overall visual theme to a luxury editorial aesthetic inspired by Restoration Hardware and Pottery Barn. Replace the current Google-inspired color palette with ivory, warm white, beige, matte black, and champagne gold accents. Switch typography to large bold serif headings (e.g., Playfair Display or similar) paired with a clean sans-serif body font. Apply generous whitespace, soft animations, smooth scrolling, and a mobile-first fully responsive layout throughout all pages and components.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-the-home-page-with-a-cinematic-full-width-hero-section-with-a-luxury-lifestyle-background-image-a-brand-tagline-and-a-cta-a-featured-collections-section-a-best-sellers-section-a-logic-based-ai-style-product-recommendations-section-e-g-based-on-category-popularity-a-testimonials-section-and-an-instagram-style-gallery-section-with-decorative-lifestyle-image-tiles",
+      "title": "Rebuild the Home Page with: a cinematic full-width hero section with a luxury lifestyle background image, a brand tagline, and a CTA; a Featured Collections section; a Best Sellers section; a logic-based AI-style product recommendations section (e.g., based on category popularity); a Testimonials section; and an Instagram-style gallery section with decorative lifestyle image tiles.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-shop-page-with-category-filter-tabs-wall-decor-lighting-furniture-art-accessories-a-price-range-filter-and-sorting-options-newest-best-selling-price-high-low-price-low-high-products-should-be-fetched-from-the-backend-and-filtered-sorted-client-side-include-a-smart-search-bar-with-auto-suggestions-that-filters-the-visible-product-list-in-real-time",
+      "title": "Build a Shop Page with: category filter tabs (Wall Decor, Lighting, Furniture, Art, Accessories), a price range filter, and sorting options (Newest, Best Selling, Price High–Low, Price Low–High). Products should be fetched from the backend and filtered/sorted client-side. Include a smart search bar with auto-suggestions that filters the visible product list in real time.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-product-detail-page-accessible-at-product-id-it-must-include-a-large-image-gallery-with-zoom-on-hover-product-name-description-price-usd-category-tag-variant-selection-e-g-color-or-size-if-applicable-add-to-cart-button-add-to-wishlist-button-shipping-return-info-accordion-and-a-related-products-section-showing-up-to-4-items-from-the-same-category",
+      "title": "Build a Product Detail Page accessible at /product/:id. It must include: a large image gallery with zoom-on-hover, product name, description, price (USD), category tag, variant selection (e.g., color or size if applicable), Add to Cart button, Add to Wishlist button, Shipping & Return info accordion, and a Related Products section showing up to 4 items from the same category.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-persistent-cart-and-wishlist-stored-in-frontend-state-react-context-or-zustand-a-cart-drawer-or-cart-page-at-cart-must-show-all-added-items-with-quantity-controls-subtotal-and-a-proceed-to-checkout-button-a-wishlist-page-at-wishlist-must-list-saved-products-with-an-option-to-move-them-to-cart",
+      "title": "Implement a persistent Cart and Wishlist stored in frontend state (React Context or Zustand). A cart drawer or cart page at /cart must show all added items with quantity controls, subtotal, and a proceed-to-checkout button. A wishlist page at /wishlist must list saved products with an option to move them to cart.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-checkout-page-at-checkout-with-a-single-page-layout-including-order-summary-panel-guest-checkout-form-name-email-shipping-address-coupon-code-input-that-applies-a-percentage-or-fixed-discount-and-an-order-total-section-on-place-order-submission-store-the-order-in-the-motoko-backend-and-show-a-confirmation-message",
+      "title": "Build a Checkout Page at /checkout with a single-page layout including: order summary panel, guest checkout form (name, email, shipping address), coupon code input that applies a percentage or fixed discount, and an Order Total section. On 'Place Order' submission, store the order in the Motoko backend and show a confirmation message.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-about-us-page-at-about-with-a-brand-story-narrative-for-signature-home-decor-llp-a-vision-mission-section-and-a-luxury-editorial-layout-with-large-imagery-and-editorial-typography",
+      "title": "Build an About Us page at /about with a brand story narrative for Signature Home Decor LLP, a Vision & Mission section, and a luxury editorial layout with large imagery and editorial typography.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-contact-page-at-contact-with-a-contact-form-name-email-subject-message-that-stores-submissions-in-the-motoko-backend-and-a-floating-whatsapp-chat-button-that-opens-a-whatsapp-link-wa-me-with-a-pre-filled-message",
+      "title": "Build a Contact Page at /contact with: a contact form (name, email, subject, message) that stores submissions in the Motoko backend, and a floating WhatsApp chat button that opens a WhatsApp link (wa.me) with a pre-filled message.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-admin-dashboard-page-at-admin-no-auth-required-for-now-that-allows-viewing-all-products-with-edit-delete-options-adding-new-products-name-description-category-price-imageurl-viewing-all-placed-orders-with-status-and-viewing-contact-form-submissions",
+      "title": "Build an Admin Dashboard page at /admin (no auth required for now) that allows: viewing all products with edit/delete options, adding new products (name, description, category, price, imageUrl), viewing all placed orders with status, and viewing contact form submissions.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-blog-section-with-a-blog-listing-page-at-blog-and-individual-post-pages-at-blog-id-pre-populate-the-motoko-backend-with-at-least-4-sample-blog-posts-title-excerpt-body-author-date-category-the-listing-page-should-display-post-cards-in-a-grid-layout",
+      "title": "Build a Blog section with a Blog listing page at /blog and individual post pages at /blog/:id. Pre-populate the Motoko backend with at least 4 sample blog posts (title, excerpt, body, author, date, category). The listing page should display post cards in a grid layout.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-site-wide-navigation-with-react-router-supporting-all-routes-home-shop-product-id-cart-wishlist-checkout-about-contact-admin-blog-blog-id-update-the-header-navigation-links-accordingly-add-a-persistent-floating-whatsapp-chat-button-visible-on-all-pages",
+      "title": "Add site-wide navigation with React Router supporting all routes: / (Home), /shop, /product/:id, /cart, /wishlist, /checkout, /about, /contact, /admin, /blog, /blog/:id. Update the Header navigation links accordingly. Add a persistent floating WhatsApp chat button visible on all pages.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-fully-navigable-react-frontend-with-react-router-covering-all-routes-home-shop-product-id-cart-wishlist-checkout-about-contact-admin-blog-blog-id-apply-the-luxury-ivory-beige-matte-black-champagne-gold-theme-with-playfair-display-serif-headings-throughout-all-pages",
+      "title": "Build a fully navigable React frontend with React Router covering all routes: / (Home), /shop, /product/:id, /cart, /wishlist, /checkout, /about, /contact, /admin, /blog, /blog/:id. Apply the luxury ivory/beige/matte black/champagne gold theme with Playfair Display serif headings throughout all pages.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-home-page-with-a-cinematic-full-width-hero-section-with-headline-and-cta-a-featured-categories-section-7-categories-a-best-sellers-section-top-4-products-and-a-testimonials-section",
+      "title": "Build the Home page with: a cinematic full-width hero section with headline and CTA, a Featured Categories section (7 categories), a Best Sellers section (top 4 products), and a Testimonials section.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-shop-page-at-shop-with-category-filter-tabs-price-range-filter-sort-options-newest-best-selling-price-high-low-price-low-high-and-a-search-bar-that-filters-products-in-real-time-fetch-products-from-the-backend-via-react-query",
+      "title": "Build the Shop page at /shop with category filter tabs, price range filter, sort options (Newest, Best Selling, Price High–Low, Price Low–High), and a search bar that filters products in real time. Fetch products from the backend via React Query.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-product-detail-page-at-product-id-with-product-image-name-description-price-usd-category-tag-add-to-cart-button-add-to-wishlist-button-a-shipping-return-info-accordion-and-a-related-products-section-showing-up-to-4-items-from-the-same-category",
+      "title": "Build the Product Detail page at /product/:id with product image, name, description, price (USD), category tag, Add to Cart button, Add to Wishlist button, a Shipping & Return info accordion, and a Related Products section showing up to 4 items from the same category.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-persistent-cart-react-context-and-wishlist-state-cart-page-at-cart-shows-items-with-quantity-controls-and-subtotal-wishlist-page-at-wishlist-lists-saved-products-with-a-move-to-cart-option",
+      "title": "Implement persistent Cart (React Context) and Wishlist state. Cart page at /cart shows items with quantity controls and subtotal. Wishlist page at /wishlist lists saved products with a Move to Cart option.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-checkout-page-at-checkout-with-guest-form-name-email-shipping-address-coupon-code-input-applying-a-discount-order-summary-panel-and-a-place-order-button-that-calls-placeorder-on-the-motoko-backend-and-shows-a-confirmation-message",
+      "title": "Build the Checkout page at /checkout with guest form (name, email, shipping address), coupon code input applying a discount, order summary panel, and a Place Order button that calls placeOrder on the Motoko backend and shows a confirmation message.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-about-us-page-at-about-with-a-brand-story-for-signature-home-decor-llp-a-vision-mission-section-and-luxury-editorial-layout",
+      "title": "Build the About Us page at /about with a brand story for Signature Home Decor LLP, a Vision & Mission section, and luxury editorial layout.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-contact-page-at-contact-with-a-form-name-email-subject-message-that-submits-to-the-motoko-backend-via-submitcontact-and-a-floating-whatsapp-button-opening-wa-me-with-a-pre-filled-message-visible-on-all-pages",
+      "title": "Build the Contact page at /contact with a form (name, email, subject, message) that submits to the Motoko backend via submitContact, and a floating WhatsApp button opening wa.me with a pre-filled message visible on all pages.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-admin-dashboard-at-admin-no-authentication-required-with-four-tabs-products-add-edit-delete-orders-view-all-with-status-contact-submissions-view-all-and-blog-posts-add-edit-delete-all-data-fetched-from-and-written-to-the-motoko-backend",
+      "title": "Build the Admin Dashboard at /admin (no authentication required) with four tabs: Products (add/edit/delete), Orders (view all with status), Contact Submissions (view all), and Blog Posts (add/edit/delete). All data fetched from and written to the Motoko backend.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-blog-listing-page-at-blog-showing-post-cards-in-a-grid-and-individual-post-pages-at-blog-id-displaying-full-post-content-data-fetched-from-the-motoko-backend",
+      "title": "Build the Blog listing page at /blog showing post cards in a grid, and individual post pages at /blog/:id displaying full post content. Data fetched from the Motoko backend.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Home page with Google-inspired theme for Signature Home Decor LLP",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Home decor item listings/catalog section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Create a Motoko backend actor that stores a list of home decor products with fields: id, name, description, category, price, and imageUrl. Pre-populate with at least 8 sample home decor items across multiple categories. Expose query functions to fetch all products and to fetch products by category.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Luxury editorial design: ivory/beige/matte black/champagne gold palette, bold serif headings, cinematic full-width hero, soft animations, smooth scrolling, mobile-first responsive",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Shop page with category filters (Wall Decor, Lighting, Furniture, Art, Accessories), price filter, sorting (Newest, Best Selling, Price High-Low)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Product detail page with large gallery/zoom, variant selection, Add to Cart, Wishlist, Related Products, Shipping & Return info",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "About Us page with brand story, vision & mission",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Contact page with contact form and WhatsApp chat button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Checkout page: one-page checkout UI, guest checkout option, coupon code system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "AI-style product recommendations, smart search with auto-suggestions",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Admin dashboard for product and order management",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Blog section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Home page: featured collections, best sellers, testimonials, Instagram-style gallery section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Update the Motoko backend actor to support: products across categories Wall Decor, Lighting, Furniture, Art, and Accessories (minimum 12 items total with USD prices); order storage (placeOrder mutation storing customer details, items, coupon, total); contact form submission storage; and blog post storage with query functions for all entities.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "Multi-currency display on Shop page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Add Office, Dining Room, and Garden as new product categories with appropriate products and images",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Product catalog with ~15-20 products using Unsplash images, prices $100-$600 USD across all 7 categories",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-31",
+      "summary": "Update the Motoko backend actor to store: 15 products across 7 categories (Living Room, Bedroom, Kitchen, Outdoor, Office, Dining Room, Garden) with fields id, name, description, category, price (USD $100–$600), and imageUrl using Unsplash URLs; order storage with placeOrder mutation; contact form submission storage; and 4 sample blog posts with title, excerpt, body, author, date, and category. Expose query functions for all entities.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Signature Home Decor LLP",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

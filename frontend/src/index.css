@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+
+    /* Luxury palette: Ivory / Warm White / Beige / Matte Black / Champagne Gold */
+    --background: 0.97 0.008 80;
+    --foreground: 0.18 0.01 60;
+
+    --card: 0.99 0.004 80;
+    --card-foreground: 0.18 0.01 60;
+
+    --popover: 0.99 0.004 80;
+    --popover-foreground: 0.18 0.01 60;
+
+    /* Primary: Matte Black */
+    --primary: 0.18 0.01 60;
+    --primary-foreground: 0.97 0.008 80;
+
+    /* Secondary: Warm Beige */
+    --secondary: 0.93 0.015 80;
+    --secondary-foreground: 0.25 0.01 60;
+
+    --muted: 0.92 0.012 75;
+    --muted-foreground: 0.52 0.01 65;
+
+    /* Accent: Champagne Gold */
+    --accent: 0.78 0.09 85;
+    --accent-foreground: 0.15 0.01 60;
+
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.97 0 0;
+
+    --border: 0.88 0.012 75;
+    --input: 0.88 0.012 75;
+    --ring: 0.78 0.09 85;
+
+    /* Luxury brand tokens */
+    --ivory: 0.97 0.008 80;
+    --warm-white: 0.99 0.004 80;
+    --beige: 0.91 0.018 78;
+    --matte-black: 0.18 0.01 60;
+    --champagne-gold: 0.78 0.09 85;
+    --champagne-gold-light: 0.88 0.06 85;
+    --champagne-gold-dark: 0.62 0.1 80;
+
+    --chart-1: 0.78 0.09 85;
+    --chart-2: 0.55 0.08 80;
+    --chart-3: 0.35 0.06 70;
+    --chart-4: 0.65 0.07 75;
+    --chart-5: 0.45 0.05 65;
+
+    --sidebar: 0.97 0.008 80;
+    --sidebar-foreground: 0.18 0.01 60;
+    --sidebar-primary: 0.18 0.01 60;
+    --sidebar-primary-foreground: 0.97 0.008 80;
+    --sidebar-accent: 0.93 0.015 80;
+    --sidebar-accent-foreground: 0.25 0.01 60;
+    --sidebar-border: 0.88 0.012 75;
+    --sidebar-ring: 0.78 0.09 85;
+  }
+
+  .dark {
+    --background: 0.13 0.01 60;
+    --foreground: 0.93 0.008 80;
+
+    --card: 0.17 0.01 60;
+    --card-foreground: 0.93 0.008 80;
+
+    --popover: 0.2 0.01 60;
+    --popover-foreground: 0.93 0.008 80;
+
+    --primary: 0.78 0.09 85;
+    --primary-foreground: 0.13 0.01 60;
+
+    --secondary: 0.22 0.01 60;
+    --secondary-foreground: 0.88 0.008 80;
+
+    --muted: 0.22 0.01 60;
+    --muted-foreground: 0.62 0.008 75;
+
+    --accent: 0.78 0.09 85;
+    --accent-foreground: 0.13 0.01 60;
+
+    --destructive: 0.65 0.22 27;
+    --destructive-foreground: 0.97 0 0;
+
+    --border: 1 0 0 / 12%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.78 0.09 85;
+
+    --ivory: 0.93 0.008 80;
+    --warm-white: 0.97 0.004 80;
+    --beige: 0.25 0.012 70;
+    --matte-black: 0.93 0.008 80;
+    --champagne-gold: 0.78 0.09 85;
+    --champagne-gold-light: 0.85 0.07 85;
+    --champagne-gold-dark: 0.65 0.1 80;
+
+    --sidebar: 0.17 0.01 60;
+    --sidebar-foreground: 0.93 0.008 80;
+    --sidebar-primary: 0.78 0.09 85;
+    --sidebar-primary-foreground: 0.13 0.01 60;
+    --sidebar-accent: 0.22 0.01 60;
+    --sidebar-accent-foreground: 0.88 0.008 80;
+    --sidebar-border: 1 0 0 / 12%;
+    --sidebar-ring: 0.78 0.09 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lato', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .luxury-card {
+    @apply bg-card border border-border shadow-luxury transition-shadow duration-300 hover:shadow-luxury-hover;
+  }
+
+  .luxury-btn-primary {
+    @apply bg-foreground text-background font-medium px-8 py-3 tracking-widest uppercase text-xs transition-colors duration-200;
+  }
+
+  .luxury-btn-primary:hover {
+    opacity: 0.85;
+  }
+
+  .luxury-btn-outline {
+    @apply border border-foreground text-foreground font-medium px-8 py-3 tracking-widest uppercase text-xs transition-colors duration-200;
+  }
+
+  .luxury-btn-outline:hover {
+    @apply bg-foreground text-background;
+  }
+
+  .luxury-btn-gold {
+    @apply bg-gold text-foreground font-medium px-8 py-3 tracking-widest uppercase text-xs transition-colors duration-200;
+  }
+
+  .luxury-btn-gold:hover {
+    @apply bg-gold-dark;
+  }
+
+  .gold-divider {
+    @apply w-12 h-0.5 bg-gold mx-auto my-4;
+  }
+
+  .section-label {
+    @apply text-xs tracking-[0.25em] uppercase text-gold font-medium;
+  }
+}

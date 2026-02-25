@@ -1,0 +1,346 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Signature Home Decor LLP - Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-19",
+      "summary": "Build fully navigable React frontend with all routes and luxury theme",
+      "acceptanceCriteria": [
+        "All routes render without errors",
+        "Header navigation links to all main pages",
+        "Luxury theme (ivory/beige/matte black/champagne gold) is consistent across all pages",
+        "Playfair Display or similar serif font used for headings"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace the current home page composition with React Router setup. Import BrowserRouter, Routes, Route from react-router-dom. Define routes for /, /shop, /product/:id, /cart, /wishlist, /checkout, /about, /contact, /admin, /blog, /blog/:id. Wrap all routes with a layout that includes Header and Footer components."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Replace smooth-scroll section links with React Router Link components. Add navigation links for Home, Shop, About, Blog, Contact, and utility links for Cart and Wishlist. Update mobile menu to use Link components. Apply luxury theme colors (ivory/beige/matte black/champagne gold) to the navigation."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Replace Google-brand color palette with luxury ivory/beige/matte black/champagne gold theme colors. Add @import for Playfair Display font from Google Fonts. Define CSS custom properties for --color-ivory, --color-beige, --color-matte-black, --color-champagne-gold. Update component classes to use the new luxury palette."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Replace Google-brand color extensions with luxury theme colors: ivory, beige, matte-black, champagne-gold. Add Playfair Display to the fontFamily.serif array. Update any Google-specific naming conventions to align with the luxury theme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "summary": "Build Home page with hero, featured categories, best sellers, and testimonials",
+      "acceptanceCriteria": [
+        "Hero section displays with headline and CTA button",
+        "Featured Categories shows all 7 categories",
+        "Best Sellers displays 4 product cards",
+        "Testimonials section renders at least 3 testimonials"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "create",
+          "description": "Create home page component that composes Hero, FeaturedCategories, BestSellers, and Testimonials sections. Import and render each section in order. This page is displayed at route /."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Update hero section to use the generated hero banner image at frontend/public/assets/generated/hero-banner.dim_1920x1080.png. Replace existing content with luxury-themed headline and CTA button linking to /shop. Apply Playfair Display font to the headline. Use ivory/beige/champagne gold color scheme."
+        },
+        {
+          "path": "frontend/src/components/FeaturedCategories.tsx",
+          "operation": "modify",
+          "description": "Expand from 4 to 7 categories: Living Room, Bedroom, Kitchen, Outdoor, Office, Dining Room, Garden. Use generated category images: frontend/public/assets/generated/category-living-room.dim_400x300.png, frontend/public/assets/generated/category-bedroom.dim_400x300.png, frontend/public/assets/generated/category-kitchen.dim_400x300.png, frontend/public/assets/generated/category-outdoor.dim_400x300.png for the first four. For Office, Dining Room, and Garden, use appropriate placeholder images or reuse similar category images. Update click handlers to navigate to /shop with category filter using React Router. Apply luxury theme styling."
+        },
+        {
+          "path": "frontend/src/components/BestSellers.tsx",
+          "operation": "create",
+          "description": "Create BestSellers section component that fetches products using useProducts hook, filters or slices to show top 4 products, and renders them using ProductCard components in a responsive grid. Include a section heading with Playfair Display font. Apply luxury theme colors."
+        },
+        {
+          "path": "frontend/src/components/Testimonials.tsx",
+          "operation": "create",
+          "description": "Create Testimonials section component displaying at least 3 customer testimonials. Use a responsive grid or carousel layout. Include customer name, quote text, and optional star rating. Apply luxury editorial styling with Playfair Display for customer names and ivory/beige/champagne gold color scheme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "summary": "Build Shop page with category filters, price range, sort options, and search",
+      "acceptanceCriteria": [
+        "Category filter tabs update the displayed product list",
+        "Price range filter narrows results correctly",
+        "Sort options reorder products correctly",
+        "Search bar filters visible products in real time"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Shop.tsx",
+          "operation": "create",
+          "description": "Create Shop page component at route /shop. Fetch products using useProducts hook from React Query. Implement local state for selected category, price range (min/max), sort order, and search query. Apply filters and sorting to the fetched products in real time. Render CategoryFilter (as tabs), PriceRangeFilter, SortOptions dropdown, and SearchBar components at the top. Display filtered and sorted products in a grid using ProductCard components. Handle loading, error, and empty states. Apply luxury theme styling throughout."
+        },
+        {
+          "path": "frontend/src/components/CategoryFilter.tsx",
+          "operation": "modify",
+          "description": "Update CategoryFilter to display 7 category tabs (All, Living Room, Bedroom, Kitchen, Outdoor, Office, Dining Room, Garden) instead of 4 filter chips. Change from accent color styling to luxury theme (ivory/beige/champagne gold). Update active/inactive states. Accept onCategoryChange callback prop and call it when a tab is clicked."
+        },
+        {
+          "path": "frontend/src/components/PriceRangeFilter.tsx",
+          "operation": "create",
+          "description": "Create PriceRangeFilter component with two number inputs or a dual-handle slider for minimum and maximum price. Use luxury theme styling. Accept min, max, onChange callback props. Display current range label ($100-$600 range based on BuildRequest product price constraint)."
+        },
+        {
+          "path": "frontend/src/components/SortOptions.tsx",
+          "operation": "create",
+          "description": "Create SortOptions dropdown component with options: Newest, Best Selling, Price High to Low, Price Low to High. Use luxury theme styling (ivory/beige/champagne gold). Accept currentSort and onSortChange callback props. Render using a select element or custom dropdown."
+        },
+        {
+          "path": "frontend/src/components/SearchBar.tsx",
+          "operation": "create",
+          "description": "Create SearchBar component with a text input for real-time product name/description filtering. Use luxury theme styling with champagne gold accent on focus. Accept searchQuery and onSearchChange callback props. Include a search icon."
+        }
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "summary": "Build Product Detail page with full product info, add to cart/wishlist, and related products",
+      "acceptanceCriteria": [
+        "Product data loads from backend by ID",
+        "Add to Cart adds the item to cart state",
+        "Add to Wishlist adds the item to wishlist state",
+        "Shipping & Return accordion expands/collapses",
+        "Related Products shows up to 4 items from the same category"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "create",
+          "description": "Create ProductDetail page component at route /product/:id. Use useParams to extract product ID. Fetch single product by ID (filter products from useProducts hook). Display product image, name, description, price (USD formatted), category tag. Render AddToCartButton and AddToWishlistButton components that call useCart and useWishlist context methods. Include ShippingReturnAccordion component. Fetch and filter related products (same category, exclude current, limit 4) and display using ProductCard grid. Handle loading and not-found states. Apply luxury theme with Playfair Display headings."
+        },
+        {
+          "path": "frontend/src/components/AddToCartButton.tsx",
+          "operation": "create",
+          "description": "Create AddToCartButton component that accepts product prop and quantity (default 1). On click, call addToCart from useCart context. Show success feedback (toast or temporary message). Style with luxury champagne gold button styling."
+        },
+        {
+          "path": "frontend/src/components/AddToWishlistButton.tsx",
+          "operation": "create",
+          "description": "Create AddToWishlistButton component that accepts product prop. On click, call addToWishlist from useWishlist context. Show success feedback. Style as an icon button (heart) with luxury theme colors."
+        },
+        {
+          "path": "frontend/src/components/ShippingReturnAccordion.tsx",
+          "operation": "create",
+          "description": "Create ShippingReturnAccordion component with expandable/collapsible sections for Shipping Info and Return Policy. Use luxury theme styling with smooth transitions. Display placeholder text for shipping and return policies."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Update ProductCard to use React Router Link for 'View Details' button navigating to /product/:id. Replace INR price display with USD price formatting. Update styling to luxury theme (ivory/beige/champagne gold borders and accents). Use Playfair Display for product name."
+        }
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "summary": "Implement persistent Cart and Wishlist state with dedicated pages",
+      "acceptanceCriteria": [
+        "Cart persists across page navigations",
+        "Quantity controls update subtotal in real time",
+        "Wishlist items can be moved to cart",
+        "Empty cart and empty wishlist states are shown when applicable"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/contexts/CartContext.tsx",
+          "operation": "create",
+          "description": "Create CartContext with React Context API. Maintain cart state as array of items (product + quantity). Persist to localStorage. Provide addToCart, removeFromCart, updateQuantity, clearCart methods and computed subtotal. Wrap context provider setup."
+        },
+        {
+          "path": "frontend/src/contexts/WishlistContext.tsx",
+          "operation": "create",
+          "description": "Create WishlistContext with React Context API. Maintain wishlist state as array of products. Persist to localStorage. Provide addToWishlist, removeFromWishlist, moveToCart (calls addToCart from CartContext) methods. Wrap context provider setup."
+        },
+        {
+          "path": "frontend/src/hooks/useCart.ts",
+          "operation": "create",
+          "description": "Create useCart hook that consumes CartContext and returns cart state and methods. Throw error if used outside CartProvider."
+        },
+        {
+          "path": "frontend/src/hooks/useWishlist.ts",
+          "operation": "create",
+          "description": "Create useWishlist hook that consumes WishlistContext and returns wishlist state and methods. Throw error if used outside WishlistProvider."
+        },
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "create",
+          "description": "Create Cart page component at route /cart. Use useCart hook to access cart items and methods. Display each cart item with product image, name, price, quantity controls (increment/decrement buttons), remove button, and line total. Show subtotal at bottom. Render EmptyCart component when cart is empty. Include a 'Proceed to Checkout' button linking to /checkout. Apply luxury theme styling with Playfair Display headings."
+        },
+        {
+          "path": "frontend/src/pages/Wishlist.tsx",
+          "operation": "create",
+          "description": "Create Wishlist page component at route /wishlist. Use useWishlist hook to access wishlist items and methods. Display each wishlist item with product image, name, price, and two action buttons: 'Move to Cart' (calls moveToCart) and 'Remove from Wishlist'. Render EmptyWishlist component when wishlist is empty. Apply luxury theme styling with Playfair Display headings."
+        },
+        {
+          "path": "frontend/src/components/EmptyCart.tsx",
+          "operation": "create",
+          "description": "Create EmptyCart component displaying a friendly message and a 'Continue Shopping' button linking to /shop. Use luxury theme styling."
+        },
+        {
+          "path": "frontend/src/components/EmptyWishlist.tsx",
+          "operation": "create",
+          "description": "Create EmptyWishlist component displaying a friendly message and a 'Browse Products' button linking to /shop. Use luxury theme styling."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Wrap the App component with CartProvider and WishlistProvider context providers (inside QueryClientProvider and InternetIdentityProvider). Import from contexts/CartContext and contexts/WishlistContext."
+        }
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "summary": "Build Checkout page with guest form, coupon code, order summary, and place order",
+      "acceptanceCriteria": [
+        "Guest form fields are validated before submission",
+        "Valid coupon codes apply a discount to the order total",
+        "Place Order calls the backend placeOrder mutation",
+        "Confirmation message is displayed after successful order"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Checkout.tsx",
+          "operation": "create",
+          "description": "Create Checkout page component at route /checkout. Use useCart hook to access cart items and subtotal. Render a guest checkout form with fields: name, email, shipping address (multi-line). Add coupon code input field with Apply button that calls backend applyCouponCode and updates displayed total. Display order summary panel showing cart items and totals (subtotal, discount if applied, final total). Implement form validation (required fields, email format). On 'Place Order' button click, validate form, then call backend placeOrder for each cart item (or as a single order with total), show loading state, display confirmation message on success, clear cart, and optionally navigate to a success route. Apply luxury theme styling with Playfair Display headings."
+        },
+        {
+          "path": "frontend/src/hooks/useMutations.ts",
+          "operation": "create",
+          "description": "Create useMutations hook file exporting React Query mutation hooks: usePlaceOrder (calls backend placeOrder), useApplyCoupon (calls backend applyCouponCode), useSubmitContact (calls backend submitContact). Use useActor to get the backend actor. Each mutation should handle loading, error, and success states."
+        }
+      ]
+    },
+    {
+      "id": "REQ-25",
+      "summary": "Build About Us page with brand story, vision & mission, and luxury editorial layout",
+      "acceptanceCriteria": [
+        "Brand story narrative is displayed",
+        "Vision & Mission section is present",
+        "Layout uses luxury editorial styling consistent with the site theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "create",
+          "description": "Create About page component at route /about. Use the generated about hero image at frontend/public/assets/generated/about-hero.dim_1440x800.png as a top hero banner. Display brand story narrative for Signature Home Decor LLP (placeholder or sample text). Include a Vision & Mission section with two subsections. Use luxury editorial layout: large Playfair Display headings, generous whitespace, ivory/beige background, matte black text, champagne gold accent elements. Optionally include team or values subsection."
+        }
+      ]
+    },
+    {
+      "id": "REQ-26",
+      "summary": "Build Contact page with form submission and floating WhatsApp button",
+      "acceptanceCriteria": [
+        "Contact form submits to the backend and shows a success message",
+        "WhatsApp floating button is visible on every page",
+        "WhatsApp link opens with a pre-filled message"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "create",
+          "description": "Create Contact page component at route /contact. Render a contact form with fields: name, email, subject, message (textarea). Validate form fields (required, email format). On submit, call useSubmitContact mutation from useMutations hook, show loading state, display success message on completion. Optionally display contact information (address, phone, email) below the form. Apply luxury theme styling with Playfair Display headings."
+        },
+        {
+          "path": "frontend/src/components/WhatsAppButton.tsx",
+          "operation": "create",
+          "description": "Create WhatsAppButton component rendering a fixed-position floating button (bottom-right corner). On click, open a WhatsApp link (wa.me) with a pre-filled message (e.g., 'Hello, I am interested in your products'). Use a WhatsApp icon and luxury champagne gold or green accent color. Ensure button is visible on all pages by rendering it in the App layout."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render WhatsAppButton component inside the Router layout so it appears on every page. Place it after the main Routes component, outside the route-specific content."
+        }
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "summary": "Build Admin Dashboard with Products, Orders, Contact Submissions, and Blog Posts tabs",
+      "acceptanceCriteria": [
+        "Products tab lists all products with Edit and Delete actions",
+        "New product form saves to backend",
+        "Orders tab lists all orders",
+        "Contact Submissions tab shows all messages",
+        "Blog Posts tab allows adding, editing, and deleting posts"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Admin.tsx",
+          "operation": "create",
+          "description": "Create Admin page component at route /admin. Implement a tabbed interface with four tabs: Products, Orders, Contact Submissions, Blog Posts. Use local state to track active tab. Render the corresponding admin panel component for each tab. No authentication required. Apply luxury theme styling with Playfair Display headings."
+        },
+        {
+          "path": "frontend/src/components/admin/ProductsTab.tsx",
+          "operation": "create",
+          "description": "Create ProductsTab component that fetches products using useProducts hook. Display products in a table or list with Edit and Delete action buttons for each. Include an 'Add New Product' button that opens a form modal or inline form. Implement add/edit/delete functionality using mutation hooks from useMutations. Apply luxury theme styling."
+        },
+        {
+          "path": "frontend/src/components/admin/OrdersTab.tsx",
+          "operation": "create",
+          "description": "Create OrdersTab component that fetches orders using a new useOrders hook (to be added to useQueries). Display orders in a table with columns: order ID, guest name, guest email, product, quantity, total price, status, created date. No edit/delete actions required. Apply luxury theme styling."
+        },
+        {
+          "path": "frontend/src/components/admin/ContactSubmissionsTab.tsx",
+          "operation": "create",
+          "description": "Create ContactSubmissionsTab component that fetches contact submissions using a new useContactSubmissions hook (to be added to useQueries). Display submissions in a table with columns: name, email, subject, message preview, created date. No edit/delete actions required. Apply luxury theme styling."
+        },
+        {
+          "path": "frontend/src/components/admin/BlogPostsTab.tsx",
+          "operation": "create",
+          "description": "Create BlogPostsTab component that fetches blog posts using a new useBlogPosts hook (to be added to useQueries). Display blog posts in a table or list with Edit and Delete action buttons. Include an 'Add New Post' button that opens a form modal or inline form. Implement add/edit/delete functionality using mutation hooks from useMutations. Apply luxury theme styling."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add three new query hooks: useOrders (calls backend.getOrders), useContactSubmissions (calls backend.getContactSubmissions), useBlogPosts (calls backend.getBlogPosts). Use the same pattern as useProducts with React Query and useActor. Export all hooks."
+        },
+        {
+          "path": "frontend/src/hooks/useMutations.ts",
+          "operation": "modify",
+          "description": "Add mutation hooks for admin operations: useAddProduct, useDeleteProduct (if backend supports it or handle client-side), useAddBlogPost, useDeleteBlogPost (if backend supports it or handle client-side). Use useActor to get backend actor and React Query's useMutation. Export all hooks."
+        }
+      ]
+    },
+    {
+      "id": "REQ-28",
+      "summary": "Build Blog listing page and individual blog post pages",
+      "acceptanceCriteria": [
+        "Blog listing shows all 4 pre-populated posts as cards",
+        "Clicking a card navigates to /blog/:id",
+        "Individual post page displays title, author, date, body content"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Blog.tsx",
+          "operation": "create",
+          "description": "Create Blog listing page component at route /blog. Use useBlogPosts hook to fetch all blog posts. Display posts in a responsive grid of blog post cards. Each card shows post title, excerpt, author, date, and category tag. Card is wrapped in a Link component navigating to /blog/:id. Handle loading and empty states. Apply luxury theme styling with Playfair Display headings."
+        },
+        {
+          "path": "frontend/src/pages/BlogPost.tsx",
+          "operation": "create",
+          "description": "Create BlogPost detail page component at route /blog/:id. Use useParams to extract post ID. Fetch blog posts using useBlogPosts hook and filter by ID. Display full post content: title (Playfair Display), author, date, category tag, and body text (with paragraph breaks). Handle loading and not-found states. Apply luxury editorial styling with generous whitespace, ivory/beige background, matte black text."
+        },
+        {
+          "path": "frontend/src/components/BlogPostCard.tsx",
+          "operation": "create",
+          "description": "Create BlogPostCard component that accepts a blog post prop. Display post title, excerpt, author, date, and category in a card layout. Wrap the entire card in a Link to /blog/:id. Apply luxury theme styling with hover effects."
+        }
+      ]
+    }
+  ]
+}

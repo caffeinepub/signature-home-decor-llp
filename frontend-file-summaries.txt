@@ -1,0 +1,17 @@
+{
+  "frontend/src/index.css": "Global luxury theme styles with OKLCH color tokens for ivory/beige/matte-black/champagne-gold palette, Playfair Display and Lato font imports, and reusable component classes — fixed `luxury-btn-primary` hover by replacing the unsupported `hover:bg-foreground/85` `@apply` with a plain CSS `opacity: 0.85` hover rule.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Google brand colors (g-red, g-blue, g-yellow, g-green), display font family, custom card shadows, and fade-in animation.",
+  "frontend/src/hooks/useQueries.ts": "React Query hook `useProducts` that fetches all products or filters by category using the backend actor's `getProducts` and `getProductsByCategory` methods.",
+  "frontend/src/components/Header.tsx": "Sticky luxury navigation header with announcement bar, logo, desktop nav links, cart/wishlist/admin icons, and responsive mobile menu — updated `flex-shrink-0` to `shrink-0`.",
+  "frontend/src/components/Hero.tsx": "Full-width hero section with the hero banner image, gradient overlay, headline, CTA buttons, and a highlights bar showing key brand features.",
+  "frontend/src/components/FeaturedCategories.tsx": "Responsive 4-column category grid (Living Room, Bedroom, Kitchen, Outdoor) with hover effects and click-to-filter functionality.",
+  "frontend/src/components/CategoryFilter.tsx": "Filter chip bar with All/Furniture/Decor/Lighting options, each styled with Google brand accent colors and active state highlighting.",
+  "frontend/src/components/ProductCard.tsx": "Individual product card showing a category-matched placeholder image, name, description, category badge, price in INR, and a View Details button.",
+  "frontend/src/components/ProductCatalog.tsx": "Full catalog section integrating the useProducts hook with loading skeletons, error/empty states, and a responsive product grid.",
+  "frontend/src/components/Footer.tsx": "Multi-column luxury footer with brand info, quick links, contact details, social icons, copyright, and caffeine.ai attribution — updated `flex-shrink-0` to `shrink-0`.",
+  "frontend/src/App.tsx": "Root app component managing selected category state and composing Header, Hero, FeaturedCategories, ProductCatalog, and Footer into the complete home page.",
+  "frontend/src/components/BlogPostCard.tsx": "Blog post card component linking to individual post pages, displaying title, excerpt, author, date, and category badge — fixed conflicting `flex block` classes by removing `block`.",
+  "frontend/src/pages/Cart.tsx": "Shopping cart page displaying cart items with quantity controls, remove buttons, and order summary panel — updated `flex-shrink-0` to `shrink-0`.",
+  "frontend/src/pages/Checkout.tsx": "One-page checkout with guest shipping form, coupon code input, order summary, and place order flow connected to the backend — updated `flex-shrink-0` to `shrink-0`.",
+  "frontend/src/pages/Admin.tsx": "Full admin dashboard page with tabbed interface (Overview, Products, Orders, Contacts, Blog Posts), stat cards, data tables for all entities, and modal forms for adding new products and blog posts — connected to the Motoko backend via React Query hooks."
+}

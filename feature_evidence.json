@@ -1,0 +1,205 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-fully-navigable-react-frontend-with-react-router-covering-all-routes-home-shop-product-id-cart-wishlist-checkout-about-contact-admin-blog-blog-id-apply-the-luxury-ivory-beige-matte-black-champagne-gold-theme-with-playfair-display-serif-headings-throughout-all-pages",
+      "featureTitle": "Build a fully navigable React frontend with React Router covering all routes: / (Home), /shop, /product/:id, /cart, /wishlist, /checkout, /about, /contact, /admin, /blog, /blog/:id. Apply the luxury ivory/beige/matte black/champagne gold theme with Playfair Display serif headings throughout all pages.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-home-page-with-a-cinematic-full-width-hero-section-with-headline-and-cta-a-featured-categories-section-7-categories-a-best-sellers-section-top-4-products-and-a-testimonials-section",
+      "featureTitle": "Build the Home page with: a cinematic full-width hero section with headline and CTA, a Featured Categories section (7 categories), a Best Sellers section (top 4 products), and a Testimonials section.",
+      "files": [
+        "frontend/src/components/BestSellers.tsx",
+        "frontend/src/components/FeaturedCategories.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/Testimonials.tsx",
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-20"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-shop-page-at-shop-with-category-filter-tabs-price-range-filter-sort-options-newest-best-selling-price-high-low-price-low-high-and-a-search-bar-that-filters-products-in-real-time-fetch-products-from-the-backend-via-react-query",
+      "featureTitle": "Build the Shop page at /shop with category filter tabs, price range filter, sort options (Newest, Best Selling, Price High–Low, Price Low–High), and a search bar that filters products in real time. Fetch products from the backend via React Query.",
+      "files": [
+        "frontend/src/components/CategoryFilter.tsx",
+        "frontend/src/pages/Shop.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-21"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-product-detail-page-at-product-id-with-product-image-name-description-price-usd-category-tag-add-to-cart-button-add-to-wishlist-button-a-shipping-return-info-accordion-and-a-related-products-section-showing-up-to-4-items-from-the-same-category",
+      "featureTitle": "Build the Product Detail page at /product/:id with product image, name, description, price (USD), category tag, Add to Cart button, Add to Wishlist button, a Shipping & Return info accordion, and a Related Products section showing up to 4 items from the same category.",
+      "files": [
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/components/ShippingReturnAccordion.tsx",
+        "frontend/src/pages/ProductDetail.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-22"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-persistent-cart-react-context-and-wishlist-state-cart-page-at-cart-shows-items-with-quantity-controls-and-subtotal-wishlist-page-at-wishlist-lists-saved-products-with-a-move-to-cart-option",
+      "featureTitle": "Implement persistent Cart (React Context) and Wishlist state. Cart page at /cart shows items with quantity controls and subtotal. Wishlist page at /wishlist lists saved products with a Move to Cart option.",
+      "files": [
+        "frontend/src/contexts/CartContext.tsx",
+        "frontend/src/contexts/WishlistContext.tsx",
+        "frontend/src/pages/Cart.tsx",
+        "frontend/src/pages/Wishlist.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-23"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-checkout-page-at-checkout-with-guest-form-name-email-shipping-address-coupon-code-input-applying-a-discount-order-summary-panel-and-a-place-order-button-that-calls-placeorder-on-the-motoko-backend-and-shows-a-confirmation-message",
+      "featureTitle": "Build the Checkout page at /checkout with guest form (name, email, shipping address), coupon code input applying a discount, order summary panel, and a Place Order button that calls placeOrder on the Motoko backend and shows a confirmation message.",
+      "files": [
+        "frontend/src/hooks/useMutations.ts",
+        "frontend/src/pages/Checkout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-24"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-about-us-page-at-about-with-a-brand-story-for-signature-home-decor-llp-a-vision-mission-section-and-luxury-editorial-layout",
+      "featureTitle": "Build the About Us page at /about with a brand story for Signature Home Decor LLP, a Vision & Mission section, and luxury editorial layout.",
+      "files": [
+        "frontend/src/pages/About.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-25"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-contact-page-at-contact-with-a-form-name-email-subject-message-that-submits-to-the-motoko-backend-via-submitcontact-and-a-floating-whatsapp-button-opening-wa-me-with-a-pre-filled-message-visible-on-all-pages",
+      "featureTitle": "Build the Contact page at /contact with a form (name, email, subject, message) that submits to the Motoko backend via submitContact, and a floating WhatsApp button opening wa.me with a pre-filled message visible on all pages.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/WhatsAppButton.tsx",
+        "frontend/src/pages/Contact.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-26"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-admin-dashboard-at-admin-no-authentication-required-with-four-tabs-products-add-edit-delete-orders-view-all-with-status-contact-submissions-view-all-and-blog-posts-add-edit-delete-all-data-fetched-from-and-written-to-the-motoko-backend",
+      "featureTitle": "Build the Admin Dashboard at /admin (no authentication required) with four tabs: Products (add/edit/delete), Orders (view all with status), Contact Submissions (view all), and Blog Posts (add/edit/delete). All data fetched from and written to the Motoko backend.",
+      "files": [
+        "frontend/src/hooks/useMutations.ts",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/Admin.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-27"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-blog-listing-page-at-blog-showing-post-cards-in-a-grid-and-individual-post-pages-at-blog-id-displaying-full-post-content-data-fetched-from-the-motoko-backend",
+      "featureTitle": "Build the Blog listing page at /blog showing post cards in a grid, and individual post pages at /blog/:id displaying full post content. Data fetched from the Motoko backend.",
+      "files": [
+        "frontend/src/components/BlogPostCard.tsx",
+        "frontend/src/pages/Blog.tsx",
+        "frontend/src/pages/BlogPost.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-28"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

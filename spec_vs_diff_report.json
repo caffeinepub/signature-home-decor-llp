@@ -1,0 +1,120 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T00:15:05.697Z",
+  "summary": "The diff implements the majority of the build requirements across backend and frontend. Most REQs are addressed, but there are notable gaps: the backend does not show pre-populated product and blog post data (relies on a runtime initializeSampleContent call rather than hardcoded seed data), the Admin dashboard lacks edit/delete functionality for products and blog posts (only add is shown), and the Shop page sort options don't fully match the spec (missing 'Best Selling' option).",
+  "missing_requirements": [
+    {
+      "id": "REQ-18",
+      "requirement": "15 products across 7 categories pre-populated in the backend; 4 blog posts pre-populated. getProducts returns all 15 products at deploy time.",
+      "reason": "The backend main.mo does not show hardcoded seed data for 15 products or 4 blog posts. The frontend calls initializeSampleContent() at runtime to populate data, but the backend function's implementation is truncated and it's unclear whether it truly seeds all 15 products with Unsplash URLs across all 7 categories and 4 blog posts. The backend AC requires data to be pre-populated, not injected via a frontend call.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useMutations.ts"
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "requirement": "Sort options must include: Newest, Best Selling, Price High-Low, Price Low-High.",
+      "reason": "The Shop page implements sort options 'newest', 'price-asc', 'price-desc', and 'name-asc'. 'Best Selling' is missing and 'name-asc' is not in the spec.",
+      "evidence": [
+        "frontend/src/pages/Shop.tsx"
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "requirement": "Products tab must have Edit and Delete actions; Blog Posts tab must allow editing and deleting posts.",
+      "reason": "The mutations file only exposes useAddProduct and useAddBlogPost with no updateProduct, deleteProduct, updateBlogPost, or deleteBlogPost mutations present. This strongly suggests edit/delete for products and blog posts is not implemented.",
+      "evidence": [
+        "frontend/src/hooks/useMutations.ts",
+        "frontend/src/pages/Admin.tsx",
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "InstagramGallery section added to the Home page, showing a 6-tile Instagram photo grid with hover effects and links to instagram.com.",
+      "reason": "The build request does not mention an Instagram gallery or social media photo feed section on the Home page.",
+      "evidence": [
+        "frontend/src/components/InstagramGallery.tsx",
+        "frontend/src/pages/Home.tsx"
+      ]
+    },
+    {
+      "description": "Announcement bar in the Header showing promotional text about free shipping and coupon codes.",
+      "reason": "No announcement or promo bar in the header was requested in any requirement.",
+      "evidence": [
+        "frontend/src/components/Header.tsx"
+      ]
+    },
+    {
+      "description": "AppInitializer component that auto-calls initializeSampleContent() on every app load when actor is ready.",
+      "reason": "Auto-initializing sample content from the frontend on every mount was not requested. The spec calls for pre-populated backend data, not a frontend-triggered initialization.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useMutations.ts"
+      ]
+    },
+    {
+      "description": "backend/migration.mo file added with a migration module converting product storage from array to Map.",
+      "reason": "No migration module or data migration was requested in the build specification.",
+      "evidence": [
+        "backend/migration.mo"
+      ]
+    },
+    {
+      "description": "Care Instructions section added as a third accordion item in ShippingReturnAccordion alongside Shipping Information and Return Policy.",
+      "reason": "REQ-22 only specifies a Shipping and Return info accordion. A separate Care Instructions accordion item was not requested.",
+      "evidence": [
+        "frontend/src/components/ShippingReturnAccordion.tsx"
+      ]
+    },
+    {
+      "description": "ProductCatalog component created as a standalone reusable component separate from the Shop page.",
+      "reason": "The spec asks for a Shop page at /shop with filters. A separate reusable ProductCatalog component was not explicitly requested and appears to duplicate Shop page functionality.",
+      "evidence": [
+        "frontend/src/components/ProductCatalog.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "frontend-file-summaries.txt",
+    "frontend/src/App.tsx",
+    "frontend/src/components/BestSellers.tsx",
+    "frontend/src/components/BlogPostCard.tsx",
+    "frontend/src/components/CategoryFilter.tsx",
+    "frontend/src/components/FeaturedCategories.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/InstagramGallery.tsx",
+    "frontend/src/components/ProductCard.tsx",
+    "frontend/src/components/ProductCatalog.tsx",
+    "frontend/src/components/ShippingReturnAccordion.tsx",
+    "frontend/src/components/Testimonials.tsx",
+    "frontend/src/components/WhatsAppButton.tsx",
+    "frontend/src/contexts/CartContext.tsx",
+    "frontend/src/contexts/WishlistContext.tsx",
+    "frontend/src/hooks/useMutations.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/pages/About.tsx",
+    "frontend/src/pages/Admin.tsx",
+    "frontend/src/pages/Blog.tsx",
+    "frontend/src/pages/BlogPost.tsx",
+    "frontend/src/pages/Cart.tsx",
+    "frontend/src/pages/Checkout.tsx",
+    "frontend/src/pages/Contact.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/ProductDetail.tsx",
+    "frontend/src/pages/Shop.tsx",
+    "frontend/src/pages/Wishlist.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
